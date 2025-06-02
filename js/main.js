@@ -38,6 +38,9 @@
       items: 1,
       margin: 30,
       stagePadding: 0,
+      autoplay: true,
+      autoplayTimeout: 5500,
+      autoplayHoverPause: false,
       nav: false,
       navText: [
         '<span class="ion-ios-arrow-back">',
@@ -66,17 +69,6 @@
         600: { items: 2 },
         1000: { items: 4 },
       },
-    });
-
-    $(".owl-carousel-home").owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: false,
-      autoplayTimeout: 2500,
-      autoplayHoverPause: false,
-      dots: true,
-      nav: false,
-      animateOut: "slideOutLeft",
     });
 
     $(".carousel-vehicles").owlCarousel({
