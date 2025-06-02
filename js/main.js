@@ -71,7 +71,7 @@
     $(".owl-carousel-home").owlCarousel({
       items: 1,
       loop: true,
-      autoplay: true,
+      autoplay: false,
       autoplayTimeout: 2500,
       autoplayHoverPause: false,
       dots: true,
@@ -296,3 +296,5 @@
     autoclose: true,
   });
 })(jQuery);
+
+

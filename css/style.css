@@ -13157,49 +13157,76 @@ textarea.form-control {
   }
 }
 
-/* Ensure the carousel container fills the viewport height */
-#hero {
-  height: 100vh;
-  overflow: hidden;
-}
-
-.home-carousel-img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* Optional: Adjust dots position and style */
-.owl-carousel-home .owl-dots {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-}
-
-.owl-carousel-home .owl-dot span {
-  background: rgba(255, 255, 255, 0.7);
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  display: inline-block;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-}
-
-.owl-carousel-home .owl-dot.active span {
-  background: var(--orange);
-}
-
 .object-fit-cover {
   object-fit: cover;
 }
 
-ul li i {
-  color: red;
-  margin-right: 8px;
+#hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.glide {
+  height: 100%;
+}
+
+.glide__track,
+.glide__slides,
+.glide__slide {
+  height: 100%;
+}
+
+.glide__slide {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+/* Navigation Arrows */
+.glide__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.glide__arrow--left {
+  left: 20px;
+}
+
+.glide__arrow--right {
+  right: 20px;
+}
+
+/* Navigation Bullets */
+.glide__bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.glide__bullet {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.glide__bullet--active {
+  background: #fd7e14;
 }
