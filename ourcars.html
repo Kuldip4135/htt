@@ -40,10 +40,16 @@
       id="ftco-navbar"
     >
       <div class="container">
-        <a class="navbar-brand" href="index.html"
-          >HARI ICHHA <br />
-          TOURS & TRAVELS</a
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="index.html"
         >
+          <img
+            src="./images/logo.png"
+            alt="Hari Ichha Logo"
+            class="website-logo"
+          />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -105,70 +111,60 @@
       </div>
     </section>
 
-    <section class="container ftco-section">
-      <div class="row ftco-animate">
-        <div class="col-md-12">
-          <div class="carousel-vehicles owl-carousel d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a
-                href=""
-                class="block-20"
-                style="
-                  background-image: url('https://images.unsplash.com/photo-1486326658981-ed68abe5868e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGNhcnxlbnwwfHwwfHx8MA%3D%3D');
-                "
-              >
-              </a>
-              <div class="d-flex align-items-center mb-4 topp">
-                <div class="one">
-                  <span class="day">7</span>
-                </div>
-                <div class="two">
-                  <span class="yr">Seater Innova</span>
-                  <span class="mos">Car</span>
+    <section class="ftco-section container">
+      <div class="glide__cars my-5">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <!-- Slide 1 -->
+            <li class="glide__slide">
+              <div class="card styled-car-card mx-2">
+                <img
+                  src="https://images.unsplash.com/photo-1704340142770-b52988e5b6eb?q=80&w=3200&auto=format&fit=crop"
+                  class="card-img-top"
+                  alt="Luxury Car"
+                />
+                <div class="card-body">
+                  <h5 class="car-title">Porsche 911 Turbo</h5>
+                  <span class="seat-badge">Seats: 4</span>
                 </div>
               </div>
-            </div>
+            </li>
 
-            <div class="blog-entry justify-content-end">
-              <a
-                href=""
-                class="block-20"
-                style="
-                  background-image: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhcnxlbnwwfHwwfHx8MA%3D%3D');
-                "
-              >
-              </a>
-              <div class="d-flex align-items-center mb-4 topp">
-                <div class="one">
-                  <span class="day">7</span>
-                </div>
-                <div class="two">
-                  <span class="yr">Seater Innova</span>
-                  <span class="mos">Car</span>
+            <!-- Slide 2 -->
+            <li class="glide__slide">
+              <div class="card styled-car-card mx-2">
+                <img
+                  src="https://images.unsplash.com/photo-1704340142770-b52988e5b6eb?q=80&w=3200&auto=format&fit=crop"
+                  class="card-img-top"
+                  alt="Luxury Car"
+                />
+                <div class="card-body">
+                  <h5 class="car-title">Porsche 911 Turbo</h5>
+                  <span class="seat-badge">Seats: 4</span>
                 </div>
               </div>
-            </div>
+            </li>
 
-            <div class="blog-entry justify-content-end">
-              <a
-                href=""
-                class="block-20"
-                style="
-                  background-image: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhcnxlbnwwfHwwfHx8MA%3D%3D');
-                "
-              >
-              </a>
-
-              <div class="d-flex align-items-center mb-4 topp">
-                <div class="one">
-                  <span class="day">5</span>
-                </div>
-                <div class="two">
-                  <span class="yr">Seater Suzuki Desire</span>
-                  <span class="mos">Car</span>
+            <!-- Slide 3 -->
+            <li class="glide__slide">
+              <div class="card styled-car-card mx-2">
+                <img
+                  src="https://images.unsplash.com/photo-1704340142770-b52988e5b6eb?q=80&w=3200&auto=format&fit=crop"
+                  class="card-img-top"
+                  alt="Luxury Car"
+                />
+                <div class="card-body">
+                  <h5 class="car-title">Porsche 911 Turbo</h5>
+                  <span class="seat-badge">Seats: 4</span>
                 </div>
               </div>
-            </div>
+            </li>
+          </ul>
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+            <!-- Add more bullets if you have more slides! -->
           </div>
         </div>
       </div>
@@ -225,21 +221,18 @@
                 <ul>
                   <li>
                     <span class="icon fa fa-map-marker"></span
-                    ><span class="text"
-                      >203 Fake St. Mountain View, San Francisco, California,
-                      USA</span
-                    >
+                    ><span class="text">Koday village, Mandvi-kutch</span>
                   </li>
                   <li>
                     <a href="#"
                       ><span class="icon fa fa-phone"></span
-                      ><span class="text">+2 392 3929 210</span></a
+                      ><span class="text">+919678360851</span></a
                     >
                   </li>
                   <li>
                     <a href="#"
                       ><span class="icon fa fa-paper-plane"></span
-                      ><span class="text">info@yourdomain.com</span></a
+                      ><span class="text">htt00851@gmail.com</span></a
                     >
                   </li>
                 </ul>
@@ -305,5 +298,19 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
+    <!-- Glide.js Core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+
+    <!-- Glide.js Theme CSS (Optional) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+
+    <!-- Glide.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
   </body>
 </html>

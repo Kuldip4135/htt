@@ -4760,6 +4760,7 @@ input[type="button"].btn-block {
   line-height: inherit;
   white-space: nowrap;
 }
+
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
@@ -4810,6 +4811,7 @@ input[type="button"].btn-block {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  color: var(--blue);
 }
 .navbar-toggler:hover,
 .navbar-toggler:focus {
@@ -13229,4 +13231,84 @@ textarea.form-control {
 
 .glide__bullet--active {
   background: #fd7e14;
+}
+
+.styled-car-card {
+  background: linear-gradient(135deg, #ffffff, #f9fafc);
+  border: 2px solid #e0e0e0;
+  border-radius: 1.5rem;
+  overflow: hidden;
+
+  transition: transform 0.3s ease;
+}
+
+.styled-car-card:hover {
+  transform: translateY(-6px);
+}
+
+.styled-car-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.styled-car-card .card-body {
+  text-align: center;
+  background: linear-gradient(145deg, #f2f9ff, #ffffff);
+  color: #333;
+}
+
+.styled-car-card .car-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.styled-car-card .seat-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--orange),
+    var(--orange),
+    var(--orange)
+  );
+
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.1);
+}
+
+.navbar-brand img {
+  height: 50px; /* Adjust height as needed */
+  width: auto; /* Keep aspect ratio */
+  object-fit: contain; /* Keeps image fully visible */
+  /* background-color: #000; */
+}
+
+.glide__cars .glide__bullets {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+  pointer-events: none;
+  cursor: none;
+}
+
+.glide__cars .glide__bullet {
+  width: 12px;
+  height: 12px;
+  background-color: "#dedede";
+  border-radius: 50%;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.glide__bullet:hover,
+.glide__bullet.glide__bullet--active {
+  background-color: var(--orange); /* Use your theme color! */
 }
