@@ -13283,10 +13283,9 @@ textarea.form-control {
 }
 
 .navbar-brand img {
-  height: 50px; /* Adjust height as needed */
-  width: auto; /* Keep aspect ratio */
-  object-fit: contain; /* Keeps image fully visible */
-  /* background-color: #000; */
+  height: 50px;
+  width: 100px;
+  object-fit: contain;
 }
 
 .glide__cars .glide__bullets {
