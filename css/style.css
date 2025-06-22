@@ -11714,6 +11714,7 @@ h5,
   height: 300px;
   position: relative;
   z-index: 0;
+  background-color: var(--yellow);
 }
 .project-wrap .img .price {
   position: absolute;
@@ -13310,4 +13311,10 @@ textarea.form-control {
 .glide__bullet:hover,
 .glide__bullet.glide__bullet--active {
   background-color: var(--orange); /* Use your theme color! */
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }

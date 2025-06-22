@@ -289,25 +289,22 @@
   });
 })(jQuery);
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-        new Glide(".glide__cars", {
-          type: "carousel",
-          startAt: 0,
-          perView: 3,
-          autoplay: 3000,
-          hoverpause: true,
-          animationDuration: 800,
-          rewind: true,
-          breakpoints: {
-            992: {
-              perView: 2, // Tablets
-            },
-            768: {
-              perView: 1, // Mobile
-            },
-          },
-        }).mount();
-      });
+  new Glide(".glide__cars", {
+    type: "carousel",
+    startAt: 0,
+    perView: 3,
+    autoplay: 3000,
+    hoverpause: true,
+    animationDuration: 800,
+    rewind: true,
+    breakpoints: {
+      992: {
+        perView: 2, // Tablets
+      },
+      768: {
+        perView: 1, // Mobile
+      },
+    },
+  }).mount();
+});
