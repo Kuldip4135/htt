@@ -37,7 +37,7 @@ async function fetchTours() {
           <a
             href="packages-details.html?id=${doc.id}"
             class="img"
-          style="background-image: url('../images/${data.imageURL}.jpg')"
+          style="background-image: url('htt/images/${data.imageURL}.jpg')"
           >
             <span class="price">${data.price}/person</span>
           </a>
