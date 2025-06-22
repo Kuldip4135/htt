@@ -59,6 +59,43 @@ async function fetchTours() {
   });
 }
 
+async function fetchToursForPackagesPage() {
+  const querySnapshot = await getDocs(collection(db, "packages"));
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    // console.log("🎒 Tour Package:", data, typeof data);
+
+    const container = document.getElementById("packages-grid-container");
+    console.log("🎒 Tour container:", container);
+    container.innerHTML += `
+    
+        <div class="project-wrap">
+          <a
+            href="packages-details.html?id=${doc.id}"
+            class="img"
+          style="background-image: url('../images/${data.imageURL}.jpg')"
+          >
+            <span class="price">${data.price}/person</span>
+          </a>
+          <div class="text p-4">
+            <span class="days">${data.night}N / ${data.days}D Tour</span>
+            <h3><a href="#">${data.title}</a></h3>
+            <p class="location">
+              <span class="fa fa-map-marker"></span> ${data.location}
+            </p>
+            <ul>
+              <li><span class="flaticon-shower"></span> ${data.night} Nights</li>
+              <li><span class="flaticon-king-size"></span> ${data.days} Days</li>
+              <li><span class="flaticon-mountains"></span>Near Mountain</li>
+            </ul>
+          </div>
+      
+      </div>
+    `;
+  });
+}
+
 async function fetchTourDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const packageId = urlParams.get("id");
@@ -144,6 +181,8 @@ window.addEventListener("DOMContentLoaded", () => {
     fetchTours(); // 🏡 Home page
   } else if (path.includes("packages-details.html")) {
     fetchTourDetails(); // 📦 Package Details page
+  } else if (path.includes("packages.html")) {
+    fetchToursForPackagesPage(); // 📦 Package Details page
   } else if (path.includes("destination.html")) {
     fetchDestinations(); // 📦 Details page
   }
