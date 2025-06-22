@@ -74,7 +74,7 @@ async function fetchToursForPackagesPage() {
           <a
             href="packages-details.html?id=${doc.id}"
             class="img"
-          style="background-image: url('../images/${data.imageURL}.jpg')"
+          style="background-image: url('/htt/images/${data.imageURL}.jpg')"
           >
             <span class="price">${data.price}/person</span>
           </a>
@@ -119,7 +119,7 @@ async function fetchTourDetails() {
   <div class="col-md-12 py-md-5 mt-md-5">
     <h2 class="mb-3">${data.title} Package Details</h2>
     <p>
-      <img src="../images/${data.imageURL || "default"}.jpg" alt="${
+      <img src="/htt/images/${data.imageURL || "default"}.jpg" alt="${
       data.title
     }" class="img-fluid" />
     </p>
@@ -158,7 +158,7 @@ async function fetchDestinations() {
   <div class="col-md-6 project-wrap">
     <div
       class="img"
-      style="background-image: url(../images/${data.imageName}.jpg)"
+      style="background-image: url(/htt/images/${data.imageName}.jpg)"
     >
     </div>
     <div class="text p-4">
