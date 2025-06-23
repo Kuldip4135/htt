@@ -13317,3 +13317,7 @@ textarea.form-control {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
+
+.bold-letter {
+  color: #000;
+}
