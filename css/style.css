@@ -4828,6 +4828,10 @@ input[type="button"].btn-block {
   background-size: 100% 100%;
 }
 
+.navbar-toggler i {
+  font-size: 2rem;
+}
+
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
   .navbar-expand-sm > .container-fluid,
@@ -13284,7 +13288,7 @@ textarea.form-control {
 
 .navbar-brand img {
   height: 50px;
-  width: 100px;
+  /* width: 100px; */
   object-fit: contain;
 }
 
