@@ -179,6 +179,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (path.includes("index.html") || path === "/" || path.endsWith("/")) {
     fetchTours(); // 🏡 Home page
+    fetchDestinations();
   } else if (path.includes("packages-details.html")) {
     fetchTourDetails(); // 📦 Package Details page
   } else if (path.includes("packages.html")) {
