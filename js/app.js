@@ -66,7 +66,7 @@ async function fetchTours() {
               <li><span class="flaticon-king-size"></span> ${
                 data.days
               } Days</li>
-              <li><span class="flaticon-mountains"></span>Near Mountain</li>
+          
             </ul>
           </div>
       
@@ -109,7 +109,6 @@ async function fetchToursForPackagesPage() {
               <li><span class="flaticon-king-size"></span> ${
                 data.days
               } Days</li>
-              <li><span class="flaticon-mountains"></span>Near Mountain</li>
             </ul>
           </div>
       
@@ -230,29 +229,4 @@ function formatTextToHTML(text, isList = false) {
   }
 }
 
-//  <div class="ftco-animate project-wrap">
-//             <a
-//               href="packages-details.html"
-//               class="img"
-//               style="background-image: url(images/hotel-resto-1.jpg)"
-//             >
-//               <!-- <span class="price">$200/person</span> -->
-//             </a>
-//             <div class="text p-4">
-//               <p class="star mb-2">
-//                 <span class="fa fa-star"></span>
-//                 <span class="fa fa-star"></span>
-//                 <span class="fa fa-star"></span>
-//                 <span class="fa fa-star"></span>
-//                 <span class="fa fa-star"></span>
-//               </p>
-//               <span class="days">8 Days Tour</span>
-//               <h3><a href="#">Bhuj</a></h3>
-
-//               <ul>
-//                 <li><span class="flaticon-shower"></span>2</li>
-//                 <li><span class="flaticon-king-size"></span>3</li>
-//                 <li><span class="flaticon-mountains"></span>Near Mountain</li>
-//               </ul>
-//             </div>
-//           </div>
+// <li><span class="flaticon-mountains"></span>Near Mountain</li>
