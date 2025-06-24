@@ -40,7 +40,7 @@ async function fetchTours() {
     // console.log("🎒 Tour Package:", data, typeof data);
 
     const container = document.getElementById("home-package-grid");
-    console.log("🎒 Tour container:", container);
+    // console.log("🎒 Tour container:", container);
     container.innerHTML += `
     
         <div class="project-wrap">
@@ -83,7 +83,7 @@ async function fetchToursForPackagesPage() {
     // console.log("🎒 Tour Package:", data, typeof data);
 
     const container = document.getElementById("packages-grid-container");
-    console.log("🎒 Tour container:", container);
+    // console.log("🎒 Tour container:", container);
     container.innerHTML += `
     
         <div class="project-wrap">
@@ -121,7 +121,7 @@ async function fetchToursForPackagesPage() {
 async function fetchTourDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const packageId = urlParams.get("id");
-  console.log("🆔 Package ID:", packageId);
+  // console.log("🆔 Package ID:", packageId);
 
   if (!packageId) {
     console.error("❌ No package ID in URL!");
@@ -133,7 +133,7 @@ async function fetchTourDetails() {
 
   if (docSnap.exists()) {
     const data = docSnap.data();
-    console.log("🎯 Tour Details:", data);
+    // console.log("🎯 Tour Details:", data);
 
     const tourContainer = document.getElementById("package-detail-container"); // wrap your content in this div
 
@@ -173,7 +173,7 @@ async function fetchDestinations() {
 
   querySnapshot.forEach((doc) => {
     const data = doc.data();
-    console.log("🎒 Destinationsss :", data);
+    // console.log("🎒 Destinationsss :", data);
     const destinationsContainer = document.getElementById("destinations");
 
     destinationsContainer.innerHTML += `
@@ -199,7 +199,7 @@ async function fetchDestinations() {
 window.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
-  console.log("📍 Current Path:", path);
+  // console.log("📍 Current Path:", path);
 
   if (path.includes("index.html") || path === "/" || path.endsWith("/")) {
     fetchTours(); // 🏡 Home page
