@@ -142,11 +142,9 @@ async function fetchTourDetails() {
     <p>
       <img src="/htt/images/${data.imageName || "default"}.jpg" alt="${
       data.title
-    }" class="img-fluid" />
+    }" class="package-detail-img" />
     </p>
-    
- 
-
+  
     <h3>Description</h3>
     ${formatTextToHTML(data.description)}
 
