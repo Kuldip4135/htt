@@ -5318,6 +5318,7 @@ input[type="button"].btn-block {
 .card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  padding: 20px;
 }
 
 .card-img,
@@ -13168,7 +13169,6 @@ textarea.form-control {
 }
 
 #hero {
-  height: 90vh;
   position: relative;
   overflow: hidden;
 }
@@ -13191,6 +13191,12 @@ textarea.form-control {
   justify-content: center;
   color: white;
   font-size: 2rem;
+  /* background-color: red; */
+}
+
+.glide__cars .glide__slide {
+  margin-top: 2rem;
+  /* max-width: 340px; */
 }
 
 /* Navigation Arrows */
@@ -13215,7 +13221,7 @@ textarea.form-control {
 }
 
 /* Navigation Bullets */
-.glide__bullets {
+.glide .glide__bullets {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -13292,13 +13298,13 @@ textarea.form-control {
   object-fit: contain;
 }
 
-.glide__cars .glide__bullets {
+.vehicles-container .glide__bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
   gap: 10px;
-  margin-top: 1rem;
-  pointer-events: none;
-  cursor: none;
 }
 
 .glide__cars .glide__bullet {
