@@ -174,7 +174,7 @@ async function fetchDestinations() {
     const destinationsContainer = document.getElementById("destinations");
 
     destinationsContainer.innerHTML += `
-  <div class="col-md-6 project-wrap">
+  <div class="col-md-4 project-wrap">
     <div
       class="img"
       style="background-image: url(/htt/images/${
