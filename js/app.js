@@ -174,7 +174,7 @@ async function fetchDestinations() {
     const destinationsContainer = document.getElementById("destinations");
 
     destinationsContainer.innerHTML += `
-  <div class="col-md-6 col-lg-4">
+  <div class="col-md-6 col-lg-4 mb-4">
     <div class="card h-100 shadow-sm border-0">
       <div 
         class="card-img-top bg-cover" 
