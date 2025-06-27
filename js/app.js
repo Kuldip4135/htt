@@ -43,11 +43,11 @@ async function fetchTours() {
     // console.log("🎒 Tour container:", container);
     container.innerHTML += `
     
-        <div class="project-wrap">
+        <div class="col-md-6 col-lg-4 project-wrap">
           <a
             href="packages-details.html?id=${doc.id}"
             class="img"
-          style="background-image: url('/htt/images/${
+          style="background-image: url('../images/${
             data.imageName || "default"
           }.jpg')"
           >
@@ -174,19 +174,20 @@ async function fetchDestinations() {
     const destinationsContainer = document.getElementById("destinations");
 
     destinationsContainer.innerHTML += `
-  <div class="col-md-4 project-wrap">
-    <div
-      class="img"
-      style="background-image: url(/htt/images/${
-        data.imageName || "default"
-      }.jpg)"
-    >
-    </div>
-    <div class="text p-4">
-      <h3><a href="#">${data.title}</a></h3>
-      <p class="location">
-        ${data.desc}
-      </p>
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm border-0">
+      <div 
+        class="card-img-top bg-cover" 
+        style="height: 220px; background-image: url('/htt/images/${
+          data.imageName || "default"
+        }.jpg'); background-size: cover; background-position: center;">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="#" class="text-decoration-none text-dark">${data.title}</a>
+        </h5>
+        <p class="card-text text-muted">${data.desc}</p>
+      </div>
     </div>
   </div>
 `;

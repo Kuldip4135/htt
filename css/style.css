@@ -76,6 +76,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -11715,7 +11716,7 @@ h5,
 }
 .project-wrap .img {
   display: block;
-  width: 400px;
+  width: 100%;
   height: 300px;
   position: relative;
   z-index: 0;
@@ -13168,12 +13169,8 @@ textarea.form-control {
   object-fit: cover;
 }
 
-#hero {
-  position: relative;
-  overflow: hidden;
-}
-
 .glide {
+  width: 100%;
   height: 100%;
 }
 
@@ -13181,6 +13178,7 @@ textarea.form-control {
 .glide__slides,
 .glide__slide {
   height: 100%;
+  width: 100%;
 }
 
 .glide__slide {
@@ -13322,11 +13320,11 @@ textarea.form-control {
   background-color: var(--orange); /* Use your theme color! */
 }
 
-.packages-grid {
+/* .packages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-}
+} */
 
 .bold-letter {
   color: #000;
