@@ -212,7 +212,8 @@ window.addEventListener("DOMContentLoaded", () => {
     fetchPackageDetails();
   } else if (path.includes("packages.html")) {
     // 📦 Package List page
-    fetchPackagesForPackagesPage();
+    // fetchPackagesForPackagesPage();
+    fetchPackages();
   } else if (path.includes("destination.html")) {
     //Destination List
     fetchDestinations();
