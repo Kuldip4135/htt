@@ -38,9 +38,10 @@
       <div id="admin-panel" class="d-none mt-5">
         <!-- 🎯 Section 1: Add Package -->
         <section class="mb-5">
-          <h3 class="mb-3">📦 Add Package</h3>
+          <h3 class="mb-3">Add Package</h3>
           <form id="add-package-form" class="row g-3">
             <div class="col-md-6">
+              <label for="imageName" class="form-label">Image Name</label>
               <input
                 type="text"
                 name="imageName"
@@ -50,6 +51,7 @@
               />
             </div>
             <div class="col-md-6">
+              <label for="days" class="form-label">Days</label>
               <input
                 type="number"
                 name="days"
@@ -59,6 +61,7 @@
               />
             </div>
             <div class="col-md-6">
+              <label for="night" class="form-label">Night</label>
               <input
                 type="number"
                 name="night"
@@ -68,6 +71,7 @@
               />
             </div>
             <div class="col-md-6">
+              <label for="title" class="form-label">Title</label>
               <input
                 type="text"
                 name="title"
@@ -76,7 +80,8 @@
                 required
               />
             </div>
-            <div class="col-md-6">
+            <div class="col-12">
+              <label for="location" class="form-label">Location</label>
               <input
                 type="text"
                 name="location"
@@ -85,16 +90,9 @@
                 required
               />
             </div>
-            <div class="col-md-6">
-              <input
-                type="text"
-                name="price"
-                class="form-control"
-                placeholder="Price"
-                required
-              />
-            </div>
+
             <div class="col-12">
+              <label for="description" class="form-label">Description</label>
               <textarea
                 name="description"
                 class="form-control"
@@ -104,6 +102,7 @@
               ></textarea>
             </div>
             <div class="col-12">
+              <label for="inclusions" class="form-label">Inclusions</label>
               <textarea
                 name="inclusions"
                 class="form-control"
@@ -113,6 +112,7 @@
               ></textarea>
             </div>
             <div class="col-12">
+              <label for="exclusions" class="form-label">Exclusions</label>
               <textarea
                 name="exclusions"
                 class="form-control"
@@ -122,10 +122,35 @@
               ></textarea>
             </div>
             <div class="col-12">
+              <label for="notes" class="form-label">Notes</label>
               <textarea
                 name="notes"
                 class="form-control"
                 placeholder="Notes"
+                rows="2"
+                required
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <label for="termsCondition" class="form-label"
+                >Terms & Conditions</label
+              >
+              <textarea
+                name="termsCondition"
+                class="form-control"
+                placeholder="Terms & Conditions"
+                rows="2"
+                required
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <label for="cancellationPolicy" class="form-label"
+                >Cancellation Policy</label
+              >
+              <textarea
+                name="cancellationPolicy"
+                class="form-control"
+                placeholder="Cancellation Policy"
                 rows="2"
                 required
               ></textarea>
@@ -136,11 +161,18 @@
           </form>
         </section>
 
+        <!-- 📦 Package List -->
+        <div class="mb-5">
+          <h4>Packages</h4>
+          <ul id="package-list" class="list-group"></ul>
+        </div>
+
         <!-- 📍 Section 2: Add Destination -->
-        <section>
-          <h3 class="mb-3">📍 Add Destination</h3>
+        <section class="mb-5">
+          <h3 class="mb-3">Add Destination</h3>
           <form id="add-destination-form" class="row g-3">
             <div class="col-md-6">
+              <label for="imageName" class="form-label">Image Name</label>
               <input
                 type="text"
                 name="imageName"
@@ -150,6 +182,7 @@
               />
             </div>
             <div class="col-md-6">
+              <label for="title" class="form-label">Title</label>
               <input
                 type="text"
                 name="title"
@@ -159,6 +192,7 @@
               />
             </div>
             <div class="col-12">
+              <label for="desc" class="form-label">Description</label>
               <textarea
                 name="desc"
                 class="form-control"
@@ -174,6 +208,12 @@
             </div>
           </form>
         </section>
+
+        <!-- 🌍 Destination List -->
+        <div>
+          <h4>Destinations</h4>
+          <ul id="destination-list" class="list-group"></ul>
+        </div>
       </div>
     </div>
 

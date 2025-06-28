@@ -32,7 +32,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function fetchTours() {
+async function fetchPackages() {
   const querySnapshot = await getDocs(collection(db, "packages"));
 
   querySnapshot.forEach((doc) => {
@@ -47,11 +47,10 @@ async function fetchTours() {
           <a
             href="packages-details.html?id=${doc.id}"
             class="img"
-          style="background-image: url('../images/${
+          style="background-image: url('/htt/images/${
             data.imageName || "default"
           }.jpg')"
           >
-            <span class="price">${data.price}/person</span>
           </a>
           <div class="text p-4">
             <span class="days">${data.night}N / ${data.days}D Tour</span>
@@ -75,7 +74,7 @@ async function fetchTours() {
   });
 }
 
-async function fetchToursForPackagesPage() {
+async function fetchPackagesForPackagesPage() {
   const querySnapshot = await getDocs(collection(db, "packages"));
 
   querySnapshot.forEach((doc) => {
@@ -94,7 +93,6 @@ async function fetchToursForPackagesPage() {
             data.imageName || "default"
           }.jpg')"
           >
-            <span class="price">${data.price}/person</span>
           </a>
           <div class="text p-4">
             <span class="days">${data.night}N / ${data.days}D Tour</span>
@@ -117,7 +115,7 @@ async function fetchToursForPackagesPage() {
   });
 }
 
-async function fetchTourDetails() {
+async function fetchPackageDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const packageId = urlParams.get("id");
   // console.log("🆔 Package ID:", packageId);
@@ -156,6 +154,12 @@ async function fetchTourDetails() {
 
     <h3>Exclusions</h3>
     ${formatTextToHTML(data.exclusions, true)}
+
+        <h3>Terms & Conditions</h3>
+    ${formatTextToHTML(data.termsConditions, true)}
+
+        <h3>Cancellation Policy</h3>
+    ${formatTextToHTML(data.cancellationPolicy, true)}
   </div>
 `;
 
@@ -200,14 +204,18 @@ window.addEventListener("DOMContentLoaded", () => {
   // console.log("📍 Current Path:", path);
 
   if (path.includes("index.html") || path === "/" || path.endsWith("/")) {
-    fetchTours(); // 🏡 Home page
+    // 🏡 Home page
+    fetchPackages();
     fetchDestinations();
   } else if (path.includes("packages-details.html")) {
-    fetchTourDetails(); // 📦 Package Details page
+    // 📦 Package Details page
+    fetchPackageDetails();
   } else if (path.includes("packages.html")) {
-    fetchToursForPackagesPage(); // 📦 Package Details page
+    // 📦 Package List page
+    fetchPackagesForPackagesPage();
   } else if (path.includes("destination.html")) {
-    fetchDestinations(); // 📦 Details page
+    //Destination List
+    fetchDestinations();
   }
 });
 
