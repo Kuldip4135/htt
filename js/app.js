@@ -115,7 +115,7 @@ async function fetchPackageDetails() {
     ${formatTextToHTML(data.exclusions, true)}
 
         <h3>Terms & Conditions</h3>
-    ${formatTextToHTML(data.termsConditions, true)}
+    ${formatTextToHTML(data.termsCondition, true)}
 
         <h3>Cancellation Policy</h3>
     ${formatTextToHTML(data.cancellationPolicy, true)}
