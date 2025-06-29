@@ -143,7 +143,7 @@ async function fetchDestinations() {
         class="card-img-top bg-cover" 
         style="height: 220px; background-image: url('/htt/images/${
           data.imageName || "whiteRan"
-        }.jpg'); background-size: cover; background-position: center;">
+        }.jpeg'); background-size: cover; background-position: center;">
       </div>
       <div class="card-body">
         <h5 class="card-title">
