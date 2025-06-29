@@ -13328,6 +13328,7 @@ textarea.form-control {
 
 .bold-letter {
   color: #000;
+  font-weight: bold;
 }
 
 .package-detail-img {
