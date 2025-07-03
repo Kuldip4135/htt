@@ -126,30 +126,89 @@ async function fetchPackageDetails() {
 
 async function fetchDestinations() {
   const querySnapshot = await getDocs(collection(db, "destinations"));
+  const destinationsContainer = document.getElementById("destinations");
+  let htmlContent = "";
 
   querySnapshot.forEach((doc) => {
     const data = doc.data();
-    const destinationsContainer = document.getElementById("destinations");
+    const docId = doc.id;
+    const fullDesc = data.desc || "";
+    const shortDesc =
+      fullDesc.length > 100 ? fullDesc.substring(0, 100) + "..." : fullDesc;
 
-    destinationsContainer.innerHTML += `
-  <div class="col-md-6 col-lg-4 mb-4">
-    <div class="card h-100 shadow-sm border-0">
-      <div 
-        class="card-img-top bg-cover" 
-        style="height: 220px; background-image: url('/htt/images/${
-          data.imageName || "whiteRan"
-        }.jpeg'); background-size: cover; background-position: center;">
+    // Escape HTML to prevent XSS
+    const escapedTitle = escapeHtml(data.title || "");
+    const escapedShortDesc = escapeHtml(shortDesc);
+
+    htmlContent += `
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div 
+            class="card-img-top bg-cover" 
+            style="height: 220px; background-image: url('/htt/images/${
+              data.imageName || "whiteRan"
+            }.jpeg'); background-size: cover; background-position: center;">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="#" class="text-decoration-none text-dark">${escapedTitle}</a>
+            </h5>
+            <p class="card-text text-muted" id="desc-${docId}">${escapedShortDesc}</p>
+            ${
+              fullDesc.length > 100
+                ? `<button class="btn btn-sm btn-link p-0 toggle-desc" 
+                     data-doc-id="${docId}" 
+                     data-full-text="${escapeHtml(fullDesc)}" 
+                     data-short-text="${escapedShortDesc}">Read more</button>`
+                : ""
+            }
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">
-          <a href="#" class="text-decoration-none text-dark">${data.title}</a>
-        </h5>
-        <p class="card-text text-muted">${data.desc}</p>
-      </div>
-    </div>
-  </div>
-`;
+    `;
   });
+
+  destinationsContainer.innerHTML = htmlContent;
+
+  // Set up event delegation for toggle buttons
+  setupToggleListeners();
+}
+
+// Helper function to escape HTML
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Set up event listeners using event delegation
+function setupToggleListeners() {
+  const destinationsContainer = document.getElementById("destinations");
+
+  // Remove existing listener if it exists
+  destinationsContainer.removeEventListener("click", handleToggleClick);
+
+  // Add new listener
+  destinationsContainer.addEventListener("click", handleToggleClick);
+}
+
+function handleToggleClick(event) {
+  if (event.target.classList.contains("toggle-desc")) {
+    const button = event.target;
+    const docId = button.dataset.docId;
+    const fullText = button.dataset.fullText;
+    const shortText = button.dataset.shortText;
+
+    const descElem = document.getElementById(`desc-${docId}`);
+
+    if (button.innerText === "Read more") {
+      descElem.innerHTML = fullText;
+      button.innerText = "Read less";
+    } else {
+      descElem.innerHTML = shortText;
+      button.innerText = "Read more";
+    }
+  }
 }
 
 window.addEventListener("DOMContentLoaded", () => {
