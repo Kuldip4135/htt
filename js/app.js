@@ -211,6 +211,23 @@ function handleToggleClick(event) {
   }
 }
 
+function formatTextToHTML(text, isList = false) {
+  if (!text || typeof text !== "string" || text.trim() === "")
+    return "<p>Not available.</p>";
+
+  const lines = text
+    .trim()
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line !== "");
+
+  if (isList) {
+    return "<ul>" + lines.map((line) => `<li>${line}</li>`).join("") + "</ul>";
+  } else {
+    return lines.map((line) => `<p>${line}</p>`).join("");
+  }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
@@ -229,22 +246,3 @@ window.addEventListener("DOMContentLoaded", () => {
     fetchDestinations();
   }
 });
-
-function formatTextToHTML(text, isList = false) {
-  if (!text || typeof text !== "string" || text.trim() === "")
-    return "<p>Not available.</p>";
-
-  const lines = text
-    .trim()
-    .split("\n")
-    .map((line) => line.trim())
-    .filter((line) => line !== "");
-
-  if (isList) {
-    return "<ul>" + lines.map((line) => `<li>${line}</li>`).join("") + "</ul>";
-  } else {
-    return lines.map((line) => `<p>${line}</p>`).join("");
-  }
-}
-
-// <li><span class="flaticon-mountains"></span>Near Mountain</li>

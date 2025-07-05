@@ -290,6 +290,10 @@
 })(jQuery);
 
 document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("inquiryBtn").addEventListener("click", () => {
+    window.location.href = "contact.html"; // 🔁 Change this to your actual page
+  });
+
   new Glide(".glide__cars", {
     type: "carousel",
     startAt: 0,
