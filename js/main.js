@@ -291,7 +291,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("inquiryBtn").addEventListener("click", () => {
-    window.location.href = "contact.html"; // 🔁 Change this to your actual page
+    window.open("https://wa.me/919687360851", "_blank");
   });
 
   new Glide(".glide__cars", {
