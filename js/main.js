@@ -294,21 +294,19 @@ document.addEventListener("DOMContentLoaded", function () {
     window.open("https://wa.me/919687360851", "_blank");
   });
 
-  new Glide(".glide__cars", {
-    type: "carousel",
-    startAt: 0,
-    perView: 3,
-    autoplay: 3000,
-    hoverpause: true,
-    animationDuration: 800,
-    rewind: true,
-    breakpoints: {
-      992: {
-        perView: 2, // Tablets
+  if (document.body.classList.contains("glide__cars")) {
+    new Glide(".glide__cars", {
+      type: "carousel",
+      startAt: 0,
+      perView: 3,
+      autoplay: 3000,
+      hoverpause: true,
+      animationDuration: 800,
+      rewind: true,
+      breakpoints: {
+        992: { perView: 2 },
+        768: { perView: 1 },
       },
-      768: {
-        perView: 1, // Mobile
-      },
-    },
-  }).mount();
+    }).mount();
+  }
 });

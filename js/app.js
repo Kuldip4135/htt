@@ -45,7 +45,7 @@ async function fetchPackages() {
           <a
             href="packages-details.html?id=${doc.id}"
             class="img"
-          style="background-image: url('/htt/images/${
+          style="background-image: url('../images/${
             data.imageName || "default"
           }.jpg')"
           >
@@ -93,7 +93,7 @@ async function fetchPackageDetails() {
   <div class="col-md-12 py-md-5 mt-md-5">
     <h2 class="mb-3">${data.title} Package Details</h2>
     <p>
-      <img src="/htt/images/${data.imageName || "default"}.jpg" alt="${
+      <img src="../images/${data.imageName || "default"}.jpg" alt="${
       data.title
     }" class="package-detail-img" />
     </p>
@@ -148,7 +148,7 @@ async function fetchDestinations() {
     <div class="card h-100 shadow-sm border-0">
       <div 
         class="card-img-top bg-cover" 
-        style="height: 220px; background-image: url('/htt/images/${
+        style="height: 220px; background-image: url('../images/${
           data.imageName || "whiteRan"
         }.jpeg'); background-size: cover; background-position: center;">
       </div>
@@ -175,7 +175,7 @@ async function fetchDestinations() {
     //     <div class="card h-100 shadow-sm border-0">
     //       <div
     //         class="card-img-top bg-cover"
-    //         style="height: 220px; background-image: url('/htt/images/${
+    //         style="height: 220px; background-image: url('../images/${
     //           data.imageName || "whiteRan"
     //         }.jpeg'); background-size: cover; background-position: center;">
     //       </div>
