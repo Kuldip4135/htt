@@ -296,10 +296,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const path = window.location.pathname;
 
   if (
-    path.includes("index.html") ||
+    path.includes("index") ||
     path === "/" ||
     path.endsWith("/") ||
-    path.includes("ourcars.html")
+    path.includes("ourcars")
   ) {
     new Glide(".glide__cars", {
       type: "carousel",
