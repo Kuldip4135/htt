@@ -140,8 +140,7 @@ async function fetchDestinations() {
     const escapedTitle = escapeHtml(data.title || "");
     const escapedShortDesc = escapeHtml(shortDesc);
 
-    // ⚠️ Use as raw HTML if it's trusted, or escapeHtml if you want text only
-    const escapedFullDesc = fullDesc;
+    const escapedFullDesc = escapeHtml(fullDesc);
 
     htmlContent += `
   <div class="col-md-6 col-lg-4 mb-4">
@@ -233,6 +232,8 @@ function formatTextToHTML(text, isList = false) {
 
 window.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
+
+  console.log("📍 Current path:", path);
 
   if (path.includes("index.html") || path === "/" || path.endsWith("/")) {
     // 🏡 Home page
