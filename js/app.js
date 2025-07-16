@@ -235,17 +235,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   console.log("📍 Current path:", path);
 
-  if (path.includes("index.html") || path === "/" || path.endsWith("/")) {
+  if (path.includes("index") || path === "/" || path.endsWith("/")) {
     // 🏡 Home page
     fetchPackages();
     fetchDestinations();
-  } else if (path.includes("packages-details.html")) {
+  } else if (path.includes("packages-details")) {
     // 📦 Package Details page
     fetchPackageDetails();
-  } else if (path.includes("packages.html")) {
+  } else if (path.includes("packages")) {
     // 📦 Package List page
     fetchPackages();
-  } else if (path.includes("destination.html")) {
+  } else if (path.includes("destination")) {
     //Destination List
     fetchDestinations();
   }
