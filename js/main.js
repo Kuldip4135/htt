@@ -295,8 +295,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   const path = window.location.pathname;
 
-  console.log("Current path:", path);
-
   if (
     path.includes("index.html") ||
     path === "/" ||
