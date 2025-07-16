@@ -293,8 +293,16 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("inquiryBtn").addEventListener("click", () => {
     window.open("https://wa.me/919687360851", "_blank");
   });
+  const path = window.location.pathname;
 
-  if (document.body.classList.contains("glide__cars")) {
+  console.log("Current path:", path);
+
+  if (
+    path.includes("index.html") ||
+    path === "/" ||
+    path.endsWith("/") ||
+    path.includes("ourcars.html")
+  ) {
     new Glide(".glide__cars", {
       type: "carousel",
       startAt: 0,

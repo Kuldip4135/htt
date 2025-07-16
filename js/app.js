@@ -169,36 +169,10 @@ async function fetchDestinations() {
     </div>
   </div>
 `;
-
-    // htmlContent += `
-    //   <div class="col-md-6 col-lg-4 mb-4">
-    //     <div class="card h-100 shadow-sm border-0">
-    //       <div
-    //         class="card-img-top bg-cover"
-    //         style="height: 220px; background-image: url('../images/${
-    //           data.imageName || "whiteRan"
-    //         }.jpeg'); background-size: cover; background-position: center;">
-    //       </div>
-    //       <div class="card-body">
-    //         <h5 class="card-title">
-    //           <a href="#" class="text-decoration-none text-dark">${escapedTitle}</a>
-    //         </h5>
-    //         <p class="card-text text-muted" id="desc-${docId}">${escapedShortDesc}</p>
-    //         ${
-    //           fullDesc.length > 100
-    //             ? `<button class="btn btn-sm btn-link p-0 toggle-desc"
-    //                  data-doc-id="${docId}"
-    //                  data-full-text="${escapeHtml(fullDesc)}"
-    //                  data-short-text="${escapedShortDesc}">Read more</button>`
-    //             : ""
-    //         }
-    //       </div>
-    //     </div>
-    //   </div>
-    // `;
+    if (htmlContent.length > 0) {
+      destinationsContainer.innerHTML = htmlContent;
+    }
   });
-
-  destinationsContainer.innerHTML = htmlContent;
 
   // Set up event delegation for toggle buttons
   setupToggleListeners();
