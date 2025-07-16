@@ -127,6 +127,13 @@ async function fetchPackageDetails() {
 async function fetchDestinations() {
   const querySnapshot = await getDocs(collection(db, "destinations"));
   const destinationsContainer = document.getElementById("destinations");
+
+  // Check if the element exists
+  if (!destinationsContainer) {
+    console.error("Element with ID 'destinations' not found");
+    return;
+  }
+
   let htmlContent = "";
 
   querySnapshot.forEach((doc) => {
@@ -139,7 +146,6 @@ async function fetchDestinations() {
     // Escape HTML to prevent XSS
     const escapedTitle = escapeHtml(data.title || "");
     const escapedShortDesc = escapeHtml(shortDesc);
-
     const escapedFullDesc = escapeHtml(fullDesc);
 
     htmlContent += `
@@ -168,10 +174,12 @@ async function fetchDestinations() {
     </div>
   </div>
 `;
-    if (htmlContent.length > 0) {
-      destinationsContainer.innerHTML = htmlContent;
-    }
   });
+
+  // Update DOM only once after processing all documents
+  if (htmlContent.length > 0) {
+    destinationsContainer.innerHTML = htmlContent;
+  }
 
   // Set up event delegation for toggle buttons
   setupToggleListeners();
