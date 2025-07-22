@@ -143,10 +143,39 @@ async function fetchDestinations() {
     const shortDesc =
       fullDesc.length > 100 ? fullDesc.substring(0, 100) + "..." : fullDesc;
 
+    console.log("📍 Processing destination:", data.desc);
+
     // Escape HTML to prevent XSS
     const escapedTitle = escapeHtml(data.title || "");
     const escapedShortDesc = escapeHtml(shortDesc);
     const escapedFullDesc = escapeHtml(fullDesc);
+
+    //     htmlContent += `
+    //   <div class="col-md-6 col-lg-4 mb-4">
+    //     <div class="card h-100 shadow-sm border-0">
+    //       <div
+    //         class="card-img-top bg-cover"
+    //         style="height: 220px; background-image: url('../images/${
+    //           data.imageName || "whiteRan"
+    //         }.jpeg'); background-size: cover; background-position: center;">
+    //       </div>
+    //       <div class="card-body">
+    //         <h5 class="card-title">
+    //           <a href="#" class="text-decoration-none text-dark">${escapedTitle}</a>
+    //         </h5>
+    //         <p class="card-text text-muted" id="desc-${docId}">
+    //           <span class="short-text">${escapedShortDesc}</span>
+    //           <span class="full-text" style="display:none;">${escapedFullDesc}</span>
+    //         </p>
+    //         ${
+    //           fullDesc.length > 100
+    //             ? `<button class="btn btn-sm btn-link p-0 toggle-desc" data-doc-id="${docId}">Read more</button>`
+    //             : ""
+    //         }
+    //       </div>
+    //     </div>
+    //   </div>
+    // `;
 
     htmlContent += `
   <div class="col-md-6 col-lg-4 mb-4">
@@ -187,9 +216,17 @@ async function fetchDestinations() {
 
 // Helper function to escape HTML
 function escapeHtml(text) {
-  const div = document.createElement("div");
-  div.textContent = text;
-  return div.innerHTML;
+  // const lines = text
+  //   .trim()
+  //   .split("\n")
+  //   .map((line) => line.trim())
+  //   .filter((line) => line !== "");
+
+  return `${text}`;
+
+  // const div = document.createElement("div");
+  // div.innerHTML = lines.map((line) => `<p>${line}</p>`).join("");
+  // return div.innerHTML;
 }
 
 // Set up event listeners using event delegation
@@ -241,7 +278,7 @@ function formatTextToHTML(text, isList = false) {
 window.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
-  console.log("📍 Current path:", path);
+  // console.log("📍 Current path:", path);
 
   if (path.includes("index") || path === "/" || path.endsWith("/")) {
     // 🏡 Home page
